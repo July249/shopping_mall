@@ -1,0 +1,5 @@
+.cart-link {
+  background: var(--main-color)
+    url('../../assets/images/icon-shoppiong-cart-white.svg') no-repeat center /
+    40px 40px;
+}
