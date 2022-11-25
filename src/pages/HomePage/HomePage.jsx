@@ -1,55 +1,49 @@
 import { useState, useEffect, useContext } from 'react';
+import styled from 'styled-components';
 
 import Card from '../../components/Card/Card';
 import Cart from '../../components/Cart/Cart';
 import FailLoadData from '../../components/Shared/FailLoadData/FailLoadData';
 
-// import { data } from '../../database/data'
-import { callAPIResponse } from '../../database/callAPI';
-import './homePage.css';
+import { callAPIResponse } from '../../db/callAPI';
 
-console.log('진입점 1');
+const ContainerMain = styled.main`
+  display: flex;
+  justify-content: center;
+  margin-top: 160px;
+  padding-bottom: 156px;
+`;
+
+const ContainerProductList = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 60px;
+  width: 1260px;
+  margin-right: 60px;
+`;
 
 export default function HomePage() {
-  // console.log(data)
-  // const data = null
   const [loadData, setLoadData] = useState(null);
-  console.log('진입점 2');
-
-  // useEffect(()=>{
-  //     console.log('로딩중...')
-  // }, [])
-
-  // useEffect(()=>{
-  //     if(loadData === null) {
-  //         return
-  //     } else {
-  //         console.log('로딩완료!!')
-  //         console.log(loadData)
-  //     }
-  // }, [loadData])
 
   useContext(callAPIResponse).then((data) => {
-    console.log('진입점 3');
     console.log(data);
     setLoadData(data);
   });
 
   return (
-    <main className="product">
+    <ContainerMain>
       {loadData !== null ? (
         <>
-          <ul className="product-list">
+          <ContainerProductList>
             {loadData.map((item) => (
               <Card key={item.id} {...item} />
             ))}
-            {console.log('진입점 4')}
-          </ul>
+          </ContainerProductList>
           <Cart />
         </>
       ) : (
         <FailLoadData />
       )}
-    </main>
+    </ContainerMain>
   );
 }
