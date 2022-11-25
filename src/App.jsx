@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import styled, { createGlobalStyle } from 'styled-components';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 import HomePage from './pages/HomePage/HomePage';
@@ -133,7 +132,14 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
-  return <HomePage />;
+  return (
+    <BrowserRouter>
+      <GlobalStyle />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
