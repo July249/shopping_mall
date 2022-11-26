@@ -1,11 +1,25 @@
 import React from 'react';
-import './productPrice.css';
+import styled from 'styled-components';
+// import './productPrice.css';
+
+const StyledPriceMedium = styled.strong`
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+`;
+
+const StyledPriceUnit = styled.span`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: 2px;
+`;
 
 export default function ProductPrice({ price }) {
   return (
-    <strong className="price m-price">
+    <StyledPriceMedium>
       {price}
-      <span>원</span>
-    </strong>
+      <StyledPriceUnit>원</StyledPriceUnit>
+    </StyledPriceMedium>
   );
 }
