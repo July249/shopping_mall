@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-// import './productPrice.css';
+
+const ContainerProductPrice = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 const StyledPriceMedium = styled.strong`
   font-weight: 700;
@@ -17,9 +21,11 @@ const StyledPriceUnit = styled.span`
 
 export default function ProductPrice({ price }) {
   return (
-    <StyledPriceMedium>
-      {price}
-      <StyledPriceUnit>원</StyledPriceUnit>
-    </StyledPriceMedium>
+    <ContainerProductPrice>
+      <StyledPriceMedium>
+        {price}
+        <StyledPriceUnit>원</StyledPriceUnit>
+      </StyledPriceMedium>
+    </ContainerProductPrice>
   );
 }

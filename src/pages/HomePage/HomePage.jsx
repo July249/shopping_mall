@@ -1,11 +1,8 @@
-import { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 
 import Card from '../../components/Card/Card';
 import Cart from '../../components/Cart/Cart';
 import FailLoadData from '../../components/Shared/FailLoadData/FailLoadData';
-
-import { callAPIResponse } from '../../db/callAPI';
 
 const ContainerMain = styled.main`
   display: flex;
@@ -22,13 +19,8 @@ const ContainerProductList = styled.ul`
   margin-right: 60px;
 `;
 
-export default function HomePage() {
-  const [loadData, setLoadData] = useState(null);
-
-  useContext(callAPIResponse).then((data) => {
-    console.log(data);
-    setLoadData(data);
-  });
+export default function HomePage({ loadData }) {
+  // console.log(loadData);
 
   return (
     <ContainerMain>
