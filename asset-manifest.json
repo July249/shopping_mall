@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/weniv_mall/static/js/main.32a61646.js",
+    "static/media/icon-shopping-cart-white.svg": "/weniv_mall/static/media/icon-shopping-cart-white.119ea0ff19fa7b1ad2aaa7e65d165d46.svg",
+    "static/media/icon-heart-on.svg": "/weniv_mall/static/media/icon-heart-on.017c9bec718e7f72e6b33302ce4c7fe5.svg",
+    "static/media/icon-heart.svg": "/weniv_mall/static/media/icon-heart.9f393b6f2c524f17cfe9d15747c7d5cf.svg",
+    "index.html": "/weniv_mall/index.html",
+    "main.32a61646.js.map": "/weniv_mall/static/js/main.32a61646.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.32a61646.js"
+  ]
+}
