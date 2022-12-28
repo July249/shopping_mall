@@ -1,13 +1,12 @@
-import { useState, useEffect, useContext } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import api from "./api/axios";
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
-import { callAPIResponse } from '../src/db/callAPI';
-
-import HomePage from './pages/HomePage/HomePage';
-import ProductDetails from './pages/ProductDetails/ProductDetails';
-import CartAndPayment from './pages/CartAndPayment/CartAndPayment';
+import HomePage from "./pages/HomePage/HomePage";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import CartAndPayment from "./pages/CartAndPayment/CartAndPayment";
 // import './assets/css/reset.css';
 // import './app.css';
 
@@ -128,21 +127,23 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   const [loadData, setLoadData] = useState(null);
 
-  useContext(callAPIResponse).then((data) => {
-    // console.log(data);
-    setLoadData(data);
-  });
-
+  useEffect(() => {
+    if (!loadData) {
+      const getProductData = async () => {
+        const res = await api.get("/");
+        // console.log(res.data);
+        setLoadData(res.data);
+      };
+      getProductData();
+    }
+  }, [loadData]);
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<HomePage loadData={loadData} />} />
         <Route path="/:id" element={<ProductDetails loadData={loadData} />} />
-        <Route
-          path="/payment"
-          element={<CartAndPayment loadData={loadData} />}
-        />
+        <Route path="/payment" element={<CartAndPayment loadData={loadData} />} />
       </Routes>
     </BrowserRouter>
   );
