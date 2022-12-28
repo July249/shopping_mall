@@ -7,15 +7,18 @@ import FailLoadData from '../../components/Shared/FailLoadData/FailLoadData';
 const ContainerMain = styled.main`
   display: flex;
   justify-content: center;
-  margin-top: 160px;
+  margin: 160px auto 0;
   padding-bottom: 156px;
 `;
 
 const ContainerProductList = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  // grid-template-columns: 1fr 1fr 1fr;
   gap: 60px;
-  width: 1260px;
+  // width: 1260px;
+  flex-basis: 1260px;
+  max-width: 1260px;
   margin-right: 60px;
 `;
 
