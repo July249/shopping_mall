@@ -1,70 +1,18 @@
-# Getting Started with Create React App
+## 프로젝트 소개
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- weniv에서 제공되는 OpenAPI 상품 정보를 이용한 쇼핑몰 웹 어플리케이션
 
-## Available Scripts
+## 프로젝트 경험
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- fetchAPI를 이용하여 받아온 데이터를 useState에 저장하여 각 컴포넌트에 직접 전달하였음
+    
+    ⇒ 불필요한 코드가 발생하여 ContextAPI를 이용한 리팩토링을 통해 props drilling을 개선시킬 예정임
+    
+- react-router-dom에서 제공하는 useParams 훅을 이용하여 상품별 상세페이지의 URL 파라미터 정보를 가져옴
+    
+    ⇒ 가져온 파라미터 정보를 활용하여 props로 받아온 상품 정보 배열에서 클릭한 Card 컴포넌트에 적합한 데이터 추출
+    
+- 스타일컴포넌트를 이용하여 상세페이지 모달창 구현
+- fetchAPI를 이용하는 대신 axios로 변경하여 자동으로 응답 받은 데이터를 JSON 데이터로 변환 받도록 수정함
+- 사용자의 로그인 상태를 전역에서 관리하기 위하여 useReducer와 ContextAPI를 같이 사용할 예정임
+- 로그인 하지 않은 사용자가 장바구니와 같이 사용자 정보를 요하는 페이지에 접근하고자 하는 경우 useNavigate 훅을 이용하여 login 페이지로 이동 및 replace 인자를 true로 지정하여 히스토리를 초기화할 예정임
