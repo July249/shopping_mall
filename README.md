@@ -2,6 +2,22 @@
 
 - weniv에서 제공되는 OpenAPI 상품 정보를 이용한 쇼핑몰 웹 어플리케이션
 
+## 미리보기
+
+- 메인 페이지
+
+![image](https://user-images.githubusercontent.com/90930391/210039658-b9512dfa-c4e6-4982-8b12-4e3f7c3277c4.png)
+
+- 상품 상세보기 모달창 페이지
+
+![image](https://user-images.githubusercontent.com/90930391/210039687-a6331364-822e-4925-9fcd-364425c16ba7.png)
+
+- 장바구니 페이지
+
+![image](https://user-images.githubusercontent.com/90930391/210039710-e4ac2860-d84c-4808-a292-7f12cc33ff76.png)
+
+
+
 ## 프로젝트 경험
 
 - fetchAPI를 이용하여 받아온 데이터를 useState에 저장하여 각 컴포넌트에 직접 전달하였음
