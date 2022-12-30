@@ -1,3 +1,7 @@
+# 쇼핑몰 페이지
+
+### https://july249.github.io/shopping_mall/
+
 ## 프로젝트 소개
 
 - weniv에서 제공되는 OpenAPI 상품 정보를 이용한 쇼핑몰 웹 어플리케이션
