@@ -1,3 +1,3 @@
-export const HeadingOne = ({ className, Children }) => {
-  return <h1 className={className}>{Children}</h1>;
+export const HeadingOne = ({ className, children }) => {
+  return <h1 className={className}>{children}</h1>;
 };
