@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { LabelEl as SearchLabel } from "../../Atoms/_Label/LabelEl";
 import { SearchBox, SearchInput, SearchBtn, SearchImg } from "./SearchBarStyle";
-import search from "../../../assets/icons/search.png";
+import searchIcon from "../../../assets/icons/search.png";
 
 const SearchBar = () => {
   const searchRef = useRef(null);
@@ -19,7 +19,7 @@ const SearchBar = () => {
       />
 
       <SearchBtn>
-        <SearchImg src={search} alt="검색" />
+        <SearchImg src={searchIcon} alt="검색" />
       </SearchBtn>
     </SearchBox>
   );
