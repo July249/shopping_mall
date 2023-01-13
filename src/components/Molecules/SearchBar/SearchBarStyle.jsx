@@ -5,13 +5,15 @@ import { ImgEl } from "../../Atoms/_Img/ImgEl";
 import { DivEl } from "../../Atoms/_Div/DivEl";
 
 export const SearchBox = styled(DivEl)`
+  display: flex;
   position: relative;
-  width: 40rem;
+  flex-basis: 100%;
 `;
 
 export const SearchInput = styled(InputEl)`
   box-sizing: border-box;
-  width: 100%;
+  display: flex;
+  width: 40rem;
   padding: 13px 22px;
   border: 2px solid var(--main-color);
   border-radius: 50px;
