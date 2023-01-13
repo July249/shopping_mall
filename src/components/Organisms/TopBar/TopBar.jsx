@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import {
   TopBarContainer,
   TopBarSection,
@@ -18,7 +18,7 @@ const TopBar = () => {
   return (
     <TopBarContainer>
       <TopBarSection>
-        <Logo />
+        <Logo size="lr" />
         <SearchBar />
       </TopBarSection>
       <TopBarMenuUl>
