@@ -1,3 +1,3 @@
-export const SpanEl = ({ className, contents }) => {
-  return <span className={className}>{contents}</span>;
+export const SpanEl = ({ className, children }) => {
+  return <span className={className}>{children}</span>;
 };
