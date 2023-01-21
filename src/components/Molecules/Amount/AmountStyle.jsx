@@ -6,18 +6,20 @@ import { ImgEl } from "../../Atoms/_Img/ImgEl";
 
 export const AmountBox = styled(DivEl)`
   box-sizing: border-box;
-  width: 15rem;
-  height: 5rem;
+  width: 150px;
+  height: 50px;
   border: 1px solid var(--button-border);
   border-radius: 5px;
 `;
 
 export const PlusBtn = styled(ButtonEl)`
+  width: 20px;
   padding: 1.5rem 1.4rem;
   background: none;
 `;
 
 export const MinusBtn = styled(ButtonEl)`
+  width: 20px;
   box-sizing: content-box;
   position: relative;
   top: -1px;
@@ -26,14 +28,14 @@ export const MinusBtn = styled(ButtonEl)`
 `;
 
 export const BtnImg = styled(ImgEl)`
-  width: 2rem;
-  height: 2rem;
+  width: 20px;
+  height: 20px;
   vertical-align: bottom;
 `;
 
 export const AmountCounter = styled(SpanEl)`
   display: inline-block;
-  width: 5.2rem;
+  width: 52px;
   text-align: center;
   font-size: 1.8rem;
   line-height: 2.3rem;

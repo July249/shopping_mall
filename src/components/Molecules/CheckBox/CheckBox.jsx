@@ -1,20 +1,22 @@
 import { useState } from "react";
-import { LabelEl } from "../../Atoms/_Label/LabelEl";
-import { CheckBoxInput, CheckBoxIcon } from "./CheckBoxStyle";
+import {
+  CheckBoxIconHollowCircle,
+  CheckBoxIconFilledCircle,
+} from "./CheckBoxStyle";
 
 const CheckBox = () => {
   const [checked, setChecked] = useState(false);
+
+  const handleChecked = () => {
+    setChecked(!checked);
+    // console.log(checked);
+    // console.log("hello");
+  };
+
   return (
-    <>
-      <LabelEl htmlFor="product-select"></LabelEl>
-      <CheckBoxInput
-        className="ir"
-        id="product-select"
-        type="checkbox"
-        onChange={() => setChecked(!checked)}
-      />
-      <CheckBoxIcon />
-    </>
+    <CheckBoxIconHollowCircle type="button" onClick={handleChecked}>
+      <CheckBoxIconFilledCircle checked={checked} />
+    </CheckBoxIconHollowCircle>
   );
 };
 
