@@ -50,7 +50,7 @@ export const InputArea = styled(InputEl)`
     if (props.id.includes("login")) {
       return "2rem 0";
     } else {
-      return "1.7rem 0 1.7rem 1.6rem";
+      return "1.7rem 1.6rem 1.7rem 1.6rem";
     }
   }};
   outline: none;
@@ -126,7 +126,7 @@ export const TextLimitCounter = styled(SpanEl)`
   }};
   position: absolute;
   top: 5rem;
-  right: 5rem;
+  left: 77.8rem;
   font-size: 1.4rem;
   line-height: 1.8rem;
   color: #c4c4c4;
