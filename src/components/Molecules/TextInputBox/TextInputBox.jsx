@@ -18,13 +18,9 @@ const TextInputBox = ({ id, text, type, placeholder, maxLength }) => {
     }
   };
 
-  const handleInputBorderColorControl = (value) => {
-    // console.log(value);
-    if (value.length > 1 && validCheck) {
-      // console.log(inputRef);
-      // inputRef.current.target.style.borderBottom = "var(--main-color)";
-    } else {
-      // inputRef.current.target.style.borderBottom = "var(--warning-color)";
+  const handleInputBorderWarningColor = (value) => {
+    if (value.length > 1 && !validCheck) {
+      inputRef.current.style.borderColor = "#EB5757";
     }
   };
 
@@ -40,7 +36,7 @@ const TextInputBox = ({ id, text, type, placeholder, maxLength }) => {
         onChange={(e) => {
           setInputValue(e.target.value);
           handleCountTxt(e.target.value);
-          handleInputBorderColorControl(e.target.value);
+          handleInputBorderWarningColor(e.target.value);
         }}
       />
       <TextLimitCounter id={id}>{`${countTxt}/50`}</TextLimitCounter>
