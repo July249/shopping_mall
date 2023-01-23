@@ -96,6 +96,26 @@ export const InputArea = styled(InputEl)`
   }
 `;
 
+export const ValidationText = styled(SpanEl)`
+  display: ${(props) => {
+    if (props.id.includes("register")) {
+      return "block";
+    } else {
+      return "none";
+    }
+  }};
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: ${(props) => {
+    if (props.validCheck) {
+      return "var(--main-color)";
+    } else {
+      return "var(--warning-color)";
+    }
+  }};
+`;
+
 export const TextLimitCounter = styled(SpanEl)`
   display: ${(props) => {
     if (props.id.includes("productName")) {
