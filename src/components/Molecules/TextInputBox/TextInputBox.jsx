@@ -3,6 +3,7 @@ import {
   InputBox,
   InputLabel,
   InputArea,
+  ValidationText,
   TextLimitCounter,
 } from "./TextInputBoxStyle";
 
@@ -11,6 +12,7 @@ const TextInputBox = ({ id, text, type, placeholder, maxLength }) => {
   const [countTxt, setCountTxt] = useState(0);
   const [inputValue, setInputValue] = useState("");
   const [validCheck, setValidCheck] = useState(false);
+  const [validTxt, setValidTxt] = useState("");
 
   const handleCountTxt = (value) => {
     if (value.length <= 50) {
@@ -21,6 +23,14 @@ const TextInputBox = ({ id, text, type, placeholder, maxLength }) => {
   const handleInputBorderWarningColor = (value) => {
     if (value.length > 1 && !validCheck) {
       inputRef.current.style.borderColor = "#EB5757";
+    }
+  };
+
+  const handleValidationText = (value) => {
+    if (value.length > 1 && validCheck) {
+      setValidTxt("사용 가능한 아이디입니다.");
+    } else if (value.length > 1 && !validCheck) {
+      setValidTxt("이미 사용 중인 아이디입니다.");
     }
   };
 
@@ -37,8 +47,12 @@ const TextInputBox = ({ id, text, type, placeholder, maxLength }) => {
           setInputValue(e.target.value);
           handleCountTxt(e.target.value);
           handleInputBorderWarningColor(e.target.value);
+          handleValidationText(e.target.value);
         }}
       />
+      <ValidationText id={id} validCheck={validCheck}>
+        {validTxt}
+      </ValidationText>
       <TextLimitCounter id={id}>{`${countTxt}/50`}</TextLimitCounter>
     </InputBox>
   );
