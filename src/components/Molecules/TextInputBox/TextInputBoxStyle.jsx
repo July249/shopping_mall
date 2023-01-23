@@ -78,6 +78,22 @@ export const InputArea = styled(InputEl)`
     line-height: 2rem;
     color: var(--sub-txt-color);
   }
+  :focus {
+    border: ${(props) => {
+      if (props.id.includes("login")) {
+        return "none";
+      } else {
+        return "1px solid var(--main-color)";
+      }
+    }};
+    border-bottom: ${(props) => {
+      if (props.id.includes("login")) {
+        return "1px solid var(--main-color)";
+      } else {
+        return "1px solid var(--main-color)";
+      }
+    }};
+  }
 `;
 
 export const TextLimitCounter = styled(SpanEl)`
