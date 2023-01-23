@@ -1,7 +1,12 @@
 import styled, { css } from "styled-components";
+import { DivEl } from "../../Atoms/_Div/DivEl";
 import { InputEl } from "../../Atoms/_Input/InputEl";
 import { LabelEl } from "../../Atoms/_Label/LabelEl";
 import { SpanEl } from "../../Atoms/_Span/SpanEl";
+
+export const InputBox = styled(DivEl)`
+  position: relative;
+`;
 
 export const InputLabel = styled(LabelEl)`
   ${(props) => {
@@ -26,8 +31,14 @@ export const InputLabel = styled(LabelEl)`
   }}
 `;
 
-export const InputBox = styled(InputEl)`
-  min-width: 48rem;
+export const InputArea = styled(InputEl)`
+  min-width: ${(props) => {
+    if (props.id.includes("productName")) {
+      return "82.6rem";
+    } else {
+      return "48rem";
+    }
+  }};
   height: ${(props) => {
     if (props.id.includes("login")) {
       return "6rem";
@@ -57,6 +68,7 @@ export const InputBox = styled(InputEl)`
       return "1px solid #c4c4c4";
     }
   }};
+  border-radius: 5px;
   background: none;
   font-size: 1.6rem;
   line-height: 2rem;
@@ -77,6 +89,8 @@ export const TextLimitCounter = styled(SpanEl)`
     }
   }};
   position: absolute;
+  top: 5rem;
+  right: 5rem;
   font-size: 1.4rem;
   line-height: 1.8rem;
   color: #c4c4c4;

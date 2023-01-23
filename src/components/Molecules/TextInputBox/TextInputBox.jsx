@@ -1,5 +1,10 @@
 import { useState, useRef } from "react";
-import { InputLabel, InputBox, TextLimitCounter } from "./TextInputBoxStyle";
+import {
+  InputBox,
+  InputLabel,
+  InputArea,
+  TextLimitCounter,
+} from "./TextInputBoxStyle";
 
 const TextInputBox = ({ id, text, type, placeholder }) => {
   const inputRef = useRef(null);
@@ -25,9 +30,9 @@ const TextInputBox = ({ id, text, type, placeholder }) => {
   };
 
   return (
-    <>
+    <InputBox>
       <InputLabel htmlFor={id} text={text} />
-      <InputBox
+      <InputArea
         id={id}
         type={type}
         placeholder={placeholder}
@@ -41,7 +46,7 @@ const TextInputBox = ({ id, text, type, placeholder }) => {
         id={id}
         onChange={handleCountTxt}
       >{`${countTxt}/50`}</TextLimitCounter>
-    </>
+    </InputBox>
   );
 };
 
