@@ -1,3 +1,7 @@
-export const LabelEl = ({ htmlFor, text }) => {
-  return <label htmlFor={htmlFor}>{text}</label>;
+export const LabelEl = ({ className, htmlFor, text }) => {
+  return (
+    <label className={className} htmlFor={htmlFor}>
+      {text}
+    </label>
+  );
 };
