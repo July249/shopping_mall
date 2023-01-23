@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
 export const InputEl = forwardRef(
-  ({ className, id, type, placeholder, onChange }, ref) => {
+  ({ className, id, type, placeholder, maxLength, onChange }, ref) => {
     return (
       <input
         className={className}
@@ -9,6 +9,7 @@ export const InputEl = forwardRef(
         type={type}
         ref={ref}
         placeholder={placeholder}
+        maxLength={maxLength}
         onChange={onChange}
       />
     );
