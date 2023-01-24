@@ -5,7 +5,6 @@ import { UlEl } from "../../Atoms/_Ul/UlEl";
 export const PhoneDropDownBox = styled(UlEl)`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 13.4rem;
   height: 15rem;
@@ -27,6 +26,7 @@ export const PhoneDropDownBox = styled(UlEl)`
     border: 6px solid transparent;
   }
   ::-webkit-scrollbar-track {
+    border-radius: 5px;
     background: #f2f2f2;
   }
 `;
