@@ -9,8 +9,8 @@ export const TopBarContainer = styled(NavEl)`
   flex-direction: row;
   flex-shrink: 0;
   justify-content: space-between;
-  padding: 2rem 0;
-  margin: 0 16.66%;
+  padding: 2rem 16.66%;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
 `;
 
 export const TopBarSection = styled(SectionEl)`
@@ -30,6 +30,7 @@ export const TopBarMenuUl = styled(UlEl)`
 `;
 
 export const TopBarMenuLi = styled(LiEl)`
+  position: relative;
   flex-shrink: 0;
   margin-right: 2.6rem;
   :last-child {
