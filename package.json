@@ -1,6 +1,6 @@
 {
   "homepage": "https://july249.github.io/shopping_mall/",
-  "name": "my-app",
+  "name": "shopping_mall",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
