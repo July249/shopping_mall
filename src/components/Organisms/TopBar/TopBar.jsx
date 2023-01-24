@@ -9,6 +9,7 @@ import Logo from "../../Molecules/Logo/Logo";
 import SearchBar from "../../Molecules/SearchBar/SearchBar";
 import ShoppingCart from "../../Molecules/ShoppingCart/ShoppingCart";
 import MyPage from "../../Molecules/MyPage/MyPage";
+import MyPageDropDown from "../../Molecules/MyPageDropDown/MyPageDropDown";
 import ProductUpload from "../../Molecules/ProductUpload/ProductUpload";
 
 const TopBar = () => {
@@ -29,6 +30,7 @@ const TopBar = () => {
         )}
         <TopBarMenuLi>
           <MyPage />
+          <MyPageDropDown />
         </TopBarMenuLi>
         {location === "seller" && (
           <TopBarMenuLi>
