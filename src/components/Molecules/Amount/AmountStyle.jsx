@@ -8,14 +8,24 @@ export const AmountBox = styled(DivEl)`
   box-sizing: border-box;
   width: 150px;
   height: 50px;
+  overflow: hidden;
   border: 1px solid var(--button-border);
   border-radius: 5px;
 `;
 
 export const PlusBtn = styled(ButtonEl)`
   width: 20px;
+  box-sizing: content-box;
   padding: 1.5rem 1.4rem;
-  background: none;
+  position: relative;
+  top: -1px;
+  background: ${(props) => {
+    if (!props.soldOut) {
+      return "none";
+    } else {
+      return "#e0e0e0";
+    }
+  }};
 `;
 
 export const MinusBtn = styled(ButtonEl)`
