@@ -1,29 +1,34 @@
 import styled, { css } from "styled-components";
 import { ButtonEl } from "../../Atoms/_Button/ButtonEl";
 
-export const LargeBtn = styled(ButtonEl)`
-  min-width: 22rem;
-  height: 6.8rem;
-  padding: 1.9rem 8.8rem;
-  background: ${(props) => {
-    if (props.bgClr === "main") {
-      return "var(--main-color)";
-    } else if (props.bgClr === "disabled") {
-      return "#c4c4c4";
+export const CustomSizeButton = styled(ButtonEl)`
+  min-width: ${(props) => {
+    if (props.size === "lr") {
+      return "22rem";
+    } else if (props.size === "md") {
+      return "48rem";
+    } else if (props.size === "sm") {
+      return "8rem";
     }
   }};
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-weight: 700;
-  font-size: 2.4rem;
-  line-height: 3rem;
-  color: #fff;
-`;
-
-export const MediumBtn = styled(ButtonEl)`
-  min-width: 48rem;
-  height: 6rem;
-  padding: 1.9rem 22.3rem;
+  height: ${(props) => {
+    if (props.size === "lr") {
+      return "6.8rem";
+    } else if (props.size === "md") {
+      return "6rem";
+    } else if (props.size === "sm") {
+      return "4rem";
+    }
+  }};
+  padding: ${(props) => {
+    if (props.size === "lr") {
+      return "1.9rem 8.8rem";
+    } else if (props.size === "md") {
+      return "1.9rem 22.3rem";
+    } else if (props.size === "sm") {
+      return "1rem 2.5rem";
+    }
+  }};
   background: ${(props) => {
     if (props.bgClr === "main") {
       return "var(--main-color)";
@@ -44,56 +49,62 @@ export const MediumBtn = styled(ButtonEl)`
   }};
   border-radius: 5px;
   box-sizing: border-box;
-  font-weight: 700;
-  font-size: 1.8rem;
-  line-height: 2.2rem;
-  color: #fff;
-`;
-
-export const SmallBtn = styled(ButtonEl)`
-  min-width: 8rem;
-  height: 4rem;
-  padding: 1rem 2.5rem;
-  background: ${(props) => {
-    if (props.bgClr === "main") {
-      return "var(--main-color)";
-    } else if (props.bgClr === "white") {
-      return "#fff";
+  font-weight: ${(props) => {
+    if (props.size === "lr" || props.size === "md") {
+      return "700";
+    } else if (props.size === "sm") {
+      return "500";
     }
   }};
-  border: ${(props) => {
-    if (props.bgClr === "white") {
-      return "1px solid var(--border-color)";
+  font-size: ${(props) => {
+    if (props.size === "lr") {
+      return "2.4rem";
+    } else if (props.size === "md") {
+      return "1.8rem";
+    } else if (props.size === "sm") {
+      return "1.6rem";
+    }
+  }};
+  line-height: ${(props) => {
+    if (props.size === "lr") {
+      return "3rem";
+    } else if (props.size === "md") {
+      return "2.2rem";
+    } else if (props.size === "sm") {
+      return "2rem";
+    }
+  }};
+  ${(props) => {
+    if (props.size === "lr" || props.size === "md") {
+      return css`
+        color: #fff;
+      `;
+    } else if (props.size === "sm" || props.bgClr === "main") {
+      return css`
+        color: #fff;
+      `;
+    } else if (props.size === "sm" || props.bgClr === "white") {
+      return css`
+        color: #767676;
+      `;
+    }
+  }}
+  ${(props) => {
+    if (props.size === "sm" || props.bgClr === "white") {
+      return css`
+        :hover {
+          color: #000;
+          border: #767676;
+        }
+      `;
     } else {
-      return "none";
+      return css`
+        :hover {
+          color: #fff;
+        }
+      `;
     }
-  }};
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-weight: 500;
-  font-size: 1.6rem;
-  line-height: 2rem;
-  color: ${(props) => {
-    if (props.bgClr === "main") {
-      return "#fff";
-    } else if (props.bgClr === "white") {
-      return "#767676";
-    }
-  }};
-  :hover {
-    color: ${(props) => {
-      if (props.bgClr === "white") {
-        return "#000";
-      } else {
-        return "#fff";
-      }
-    }};
-    border: ${(props) => {
-      if (props.bgClr === "white") {
-        return "#767676";
-      }
-    }};
-  }
+  }}
 `;
 
 export const MSIconBtn = styled(ButtonEl)`
