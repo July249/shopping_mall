@@ -10,7 +10,7 @@ export const CheckBoxIconHollowCircle = styled(ButtonEl)`
   height: 20px;
   border-radius: 50%;
   border: 2px solid var(--main-color);
-  background-color: none;
+  background: none;
   cursor: pointer;
 `;
 
