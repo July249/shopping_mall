@@ -1,7 +1,11 @@
 import { PriceText } from "./PriceStyle";
 
-const Price = ({ size, price }) => {
-  return <PriceText size={size}>{price}</PriceText>;
+const Price = ({ size, price, isEmphasized }) => {
+  return (
+    <PriceText size={size} isEmphasized={isEmphasized}>
+      {price}
+    </PriceText>
+  );
 };
 
 export default Price;
