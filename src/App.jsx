@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     --border-color: #c4c4c4;
     --sub-border-color: #e0e0e0;
     --bg-color: #fffff;
-    --emphasis-txt-color: #EB5757;
+    --emphasized-txt-color: #EB5757;
     --warning-color: #EB5757;
     --sub-txt-color: #767676;
     --button-border: #c4c4c4;
@@ -120,6 +120,7 @@ const GlobalStyle = createGlobalStyle`
   /* button 스타일 */
   button {
     border: none;
+    background-color: none;
     cursor: pointer;
     padding: 0;
   }
@@ -143,10 +144,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home loadData={loadData} />} />
         <Route path="/:id" element={<ProductDetails loadData={loadData} />} />
-        <Route
-          path="/payment"
-          element={<CartAndPayment loadData={loadData} />}
-        />
+        <Route path="/payment" element={<CartAndPayment loadData={loadData} />} />
       </Routes>
     </BrowserRouter>
   );
