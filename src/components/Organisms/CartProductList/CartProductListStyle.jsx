@@ -1,13 +1,10 @@
 import styled from "styled-components";
 import { LiEl } from "../../Atoms/_Li/LiEl";
-import ProductImg from "../../Molecules/ProductImg/ProductImg";
 import { SectionEl } from "../../Atoms/_Section/SectionEl";
 import { SpanEl } from "../../Atoms/_Span/SpanEl";
 import { StrongEl } from "../../Atoms/_Strong/StrongEl";
 import Price from "../../Molecules/Price/Price";
-import Amount from "../../Molecules/Amount/Amount";
-import { DivEl } from "../../Atoms/_Div/DivEl";
-import { ButtonEl } from "../../Atoms/_Button/ButtonEl";
+import ProductImg from "../../Molecules/ProductImg/ProductImg";
 import DeleteButton from "../../Molecules/DeleteButton/DeleteButton";
 
 export const CartProductContentList = styled(LiEl)`
