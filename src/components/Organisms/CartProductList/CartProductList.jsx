@@ -1,6 +1,8 @@
 import CheckBox from "../../Molecules/CheckBox/CheckBox";
 import Amount from "../../Molecules/Amount/Amount";
 import { SmallBtnMain } from "../../Molecules/Buttons/Buttons";
+// temporary image source
+import TempImg from "../../../assets/images/product-thumbnail.png";
 import {
   CartProductContentBox,
   CartProductInfoBox,
@@ -21,7 +23,7 @@ const CartProductList = () => {
     <CartProductContentList>
       <CheckBox />
       <CartProductContentBox>
-        <CartProductImg size="md" />
+        <CartProductImg size="md" src={TempImg} />
         <CartProductInfoBox>
           <CartProductCompany>백엔드글로벌</CartProductCompany>
           <CartProductTitle>딥러닝 개발자 무릎 담요</CartProductTitle>
