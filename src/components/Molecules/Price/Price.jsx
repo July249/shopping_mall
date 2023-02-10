@@ -1,8 +1,8 @@
 import { PriceText } from "./PriceStyle";
 
-const Price = ({ size, price, isEmphasized }) => {
+const Price = ({ size, price, isEmphasized, addUnit = true }) => {
   return (
-    <PriceText size={size} isEmphasized={isEmphasized}>
+    <PriceText size={size} isEmphasized={isEmphasized} addUnit={addUnit}>
       {price}
     </PriceText>
   );

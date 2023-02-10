@@ -29,11 +29,20 @@ export const PriceText = styled(SpanEl)`
   color: ${(props) => {
     if (props.isEmphasized) {
       return "var(--emphasized-txt-color)";
+    } else if (!props.addUnit) {
+      return "var(--sub-txt-color)";
     } else {
       return "var(--txt-color)";
     }
   }};
   ::after {
+    display: ${(props) => {
+      if (props.addUnit) {
+        return "inline-block";
+      } else {
+        return "none";
+      }
+    }};
     content: "원";
     font-weight: 400;
     font-size: ${(props) => {
