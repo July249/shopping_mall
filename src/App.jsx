@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import api from "./api/axios";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
 import Home from "./pages/Home/Home";
-import ProductDetails from "./pages/ProductDetails/ProductDetails";
-import CartAndPayment from "./pages/Cart/CartAndPayment";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -127,24 +124,11 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
-  const [loadData, setLoadData] = useState(null);
-
-  useEffect(() => {
-    if (!loadData) {
-      const getProductData = async () => {
-        const res = await api.get("/");
-        setLoadData(res.data);
-      };
-      getProductData();
-    }
-  }, [loadData]);
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <GlobalStyle />
       <Routes>
-        <Route path="/" element={<Home loadData={loadData} />} />
-        <Route path="/:id" element={<ProductDetails loadData={loadData} />} />
-        <Route path="/payment" element={<CartAndPayment loadData={loadData} />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

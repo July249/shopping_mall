@@ -23,27 +23,7 @@ import {
   TabMenuBtnActive,
   TabMenuBtnDeactive,
 } from "../../components/Molecules/Buttons/Buttons";
-// import Card from "../../components/Card/Card";
-// import Cart from "../../components/Cart/Cart";
-// import FailLoadData from "../../components/Shared/FailLoadData/FailLoadData";
-
-// const ContainerMain = styled.main`
-//   display: flex;
-//   justify-content: center;
-//   margin: 160px auto 0;
-//   padding-bottom: 156px;
-// `;
-
-// const ContainerProductList = styled.ul`
-//   display: flex;
-//   flex-wrap: wrap;
-//   // grid-template-columns: 1fr 1fr 1fr;
-//   gap: 60px;
-//   // width: 1260px;
-//   flex-basis: 1260px;
-//   max-width: 1260px;
-//   margin-right: 60px;
-// `;
+import ProductInfo from "../../components/Organisms/ProductInfo/ProductInfo";
 
 export default function Home({ loadData }) {
   return (
@@ -56,48 +36,21 @@ export default function Home({ loadData }) {
       <br />
       <CartProductList />
       <br />
-      <TextInputBox
-        id="login_id"
-        text="아이디"
-        type="text"
-        placeholder="아이디"
-        maxLength=""
-      />
+      <ProductInfo />
+      <br />
+      <TextInputBox id="login_id" text="아이디" type="text" placeholder="아이디" maxLength="" />
       <br />
       <br />
-      <TextInputBox
-        id="login_password"
-        text="비밀번호"
-        type="password"
-        placeholder="비밀번호"
-        maxLength=""
-      />
+      <TextInputBox id="login_password" text="비밀번호" type="password" placeholder="비밀번호" maxLength="" />
       <br />
       <br />
-      <TextInputBox
-        id="register_id"
-        text="아이디"
-        type="text"
-        placeholder="아이디"
-        maxLength=""
-      />
+      <TextInputBox id="register_id" text="아이디" type="text" placeholder="아이디" maxLength="" />
       <br />
       <br />
-      <TextInputBox
-        id="productName"
-        text="상품명"
-        type="text"
-        placeholder=""
-        maxLength="50"
-      />
+      <TextInputBox id="productName" text="상품명" type="text" placeholder="" maxLength="50" />
       <br />
       <br />
-      <NumberInputBox
-        id="productPrice"
-        text="판매가"
-        type="number"
-        placeholder=""
-      />
+      <NumberInputBox id="productPrice" text="판매가" type="number" placeholder="" />
       <br />
       <br />
       <CheckText />
@@ -152,28 +105,9 @@ export default function Home({ loadData }) {
       <TabMenuBtnActive type="button" productCount="3" news="1" active={true} />
       <br />
       <br />
-      <TabMenuBtnDeactive
-        type="button"
-        productCount="3"
-        news="1"
-        active={false}
-      />
+      <TabMenuBtnDeactive type="button" productCount="3" news="1" active={false} />
       <br />
       <br />
-      {/* <ContainerMain>
-        {loadData !== null ? (
-          <>
-            <ContainerProductList>
-              {loadData.map((item) => (
-                <Card key={item.id} {...item} />
-              ))}
-            </ContainerProductList>
-            <Cart />
-          </>
-        ) : (
-          <FailLoadData />
-        )}
-      </ContainerMain> */}
     </>
   );
 }
