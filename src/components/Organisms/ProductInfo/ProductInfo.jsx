@@ -1,5 +1,5 @@
-// Temporary image source
 import { useState } from "react";
+// Temporary image source
 import TempImg from "../../../assets/images/product-thumbnail.png";
 import {
   ProductInfoList,
@@ -26,9 +26,9 @@ const ProductInfo = () => {
           <ProductPurchaseQuantity>수량 : {quantity}개</ProductPurchaseQuantity>
         </ProductTextBox>
       </ProductInfoBox>
-      <ProductDiscountPrice size="sm" price="-" isEmphasized={false} addUnit={false} />
+      <ProductDiscountPrice size="sm" price="-" addUnit={false} />
       <ProductDeliveryOption>무료배송</ProductDeliveryOption>
-      <ProductSalePrice size="sm" price="17500" isEmphasized={false} />
+      <ProductSalePrice size="sm" price="17500" />
     </ProductInfoList>
   );
 };
