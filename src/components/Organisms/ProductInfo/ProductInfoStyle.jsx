@@ -15,8 +15,7 @@ export const ProductInfoList = styled(LiEl)`
   justify-content: start;
   align-items: center;
   padding: 0.8rem 7.7rem 1.8rem 0.8rem;
-  border: 2px solid var(--sub-border-color);
-  border-radius: 10px;
+  border-bottom: 1px solid var(--sub-border-color);
 `;
 export const ProductInfoBox = styled(SectionEl)`
   display: flex;
