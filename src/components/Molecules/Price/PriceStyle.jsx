@@ -3,7 +3,13 @@ import { SpanEl } from "../../Atoms/_Span/SpanEl";
 
 export const PriceText = styled(SpanEl)`
   display: block;
-  font-weight: 700;
+  font-weight: ${(props) => {
+    if (props.size === "lr" || props.size === "md") {
+      return "700";
+    } else {
+      return "500";
+    }
+  }};
   font-size: ${(props) => {
     if (props.size === "lr") {
       return "3.6rem";
